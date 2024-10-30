@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-space: 'Space Grotesk', sans-serif;
+  --font-syncopate: 'Syncopate', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  cursor: none;
+  background: #0a0a0a;
+  color: #fff;
+  overflow-x: hidden;
+  font-family: var(--font-space);
+}
+
+.font-space {
+  font-family: var(--font-space);
+}
+
+.font-syncopate {
+  font-family: var(--font-syncopate);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+::selection {
+  background: rgba(139, 92, 246, 0.3);
+  color: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4c1d95;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6d28d9;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+@media (max-width: 640px) {
+  .skill-card {
+    transform: none !important;
+  }
+}
+
+.typewriter {
+  /* border-right: 2px solid #a855f7; */
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.typewriter-animation {
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: #a855f7
+  }
+}
+
+.hover-tilt {
+  transition: transform 0.3s ease-out;
+}
+
+.hover-tilt:hover {
+  transform: perspective(1000px) rotateX(10deg) rotateY(10deg) scale(1.05);
+}
